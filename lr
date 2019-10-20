@@ -16,3 +16,27 @@ plt.show()
 x=sm.add_constant(x1)
 result=sm.OLS(y,x).fit()
 results.summary()
+plt.scatter(x1,y)
+yhat=0.0017*x1+0.275
+fig=plt.plot(x1,yhat,lw=4,c='red',label='regression line')
+plt.xlabel('SAT',fontsize=20)
+plt.ylabel('GPA',fontsize=20)
+plt.show()
+
+result table:
+Dep. Variable:	GPA	R-squared:	0.406
+Model:	OLS	Adj. R-squared:	0.399
+Method:	Least Squares	F-statistic:	56.05
+Date:	Mon, 21 Oct 2019	Prob (F-statistic):	7.20e-11
+Time:	00:40:08	Log-Likelihood:	12.672
+No. Observations:	84	AIC:	-21.34
+Df Residuals:	82	BIC:	-16.48
+Df Model:	1		
+Covariance Type:	nonrobust		
+coef	std err	t	P>|t|	[0.025	0.975]
+const	0.2750	0.409	0.673	0.503	-0.538	1.088
+SAT	0.0017	0.000	7.487	0.000	0.001	0.002
+Omnibus:	12.839	Durbin-Watson:	0.950
+Prob(Omnibus):	0.002	Jarque-Bera (JB):	16.155
+Skew:	-0.722	Prob(JB):	0.000310
+Kurtosis:	4.590	Cond. No.	3.29e+04
